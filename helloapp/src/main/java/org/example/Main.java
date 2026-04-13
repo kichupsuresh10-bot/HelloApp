@@ -3,23 +3,25 @@ package org.example;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
+   public static void main(String[] args) {
 
-        String result;
+                String result;
 
-        if (args.length == 0) {
-            result = "World";
-        } else {
-            StringBuilder names = new StringBuilder();
+                if (args.length == 0) {
+                    result = "World";
+                } else {
+                    StringBuilder nameBuilder = new StringBuilder();
 
-            for (String name : args) {
-                if (names.length() > 0) {
-                    names.append(", ");
+                    for (String name : args) {
+                        nameBuilder.append(name).append(", ");
+                    }
+
+                    // Remove trailing ", "
+                    result = nameBuilder.substring(0, nameBuilder.length() - 2);
                 }
-                names.append(name);
-            }
 
-            result = names.toString();
+                System.out.println("Hello, " + result + "!");
+            }
         }
 
         System.out.println("Hello, " + result + "!");
